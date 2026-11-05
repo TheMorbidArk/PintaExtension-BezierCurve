@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Addin id="TheMorbidArk.PintaExtension.BezierCurve" version="0.1.0" category="Tools">
+	<!-- Information shown in the add-in manager. -->
+	<Header>
+		<Name>Bezier Curve</Name>
+		<Description>Adds a Bezier curve tool: drag out a line, then bend it with one or two control points. Includes an MS Paint-style object mode.</Description>
+		<Author>TheMorbidArk</Author>
+		<Url>https://github.com/TheMorbidArk/PintaExtension-BezierCurve</Url>
+	</Header>
+	<!-- Declare the minimum required version of Pinta. -->
+	<Dependencies>
+		<Addin id="Pinta" version="3.1" />
+	</Dependencies>
+	<!--
+	  The extension node is declared by hand so that the type is referenced by simple
+	  assembly name, without a version. Mono.Addins normally writes the full assembly
+	  identity (including the version) into the node, which means a node created by a new
+	  version can only be instantiated from the new file - and .NET refuses to load a
+	  second assembly with the same simple name. Without the version the runtime uses
+	  whichever assembly with that name is already loaded, so replacing the add-in in a
+	  running Pinta always finds its type.
+	-->
+	<Extension path="/Pinta/TypeExtensions/Pinta.Core.IExtension">
+		<Type id="CurveAddin" type="TheMorbidArk.PintaExtension.BezierCurve.CurveAddin, TheMorbidArk.PintaExtension.BezierCurve" />
+	</Extension>
+</Addin>

@@ -1,0 +1,75 @@
+name: build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+jobs:
+  build:
+    name: build, test and package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # The smoke test and the package test start Pinta, which needs a display.
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      # Only Pinta.Core is needed to compile the add-in, but the test scripts start the
+      # application, so the whole of Pinta is cloned and built here.
+      - name: Cache Pinta
+        uses: actions/cache@v4
+        with:
+          path: .pinta
+          key: pinta-3.1-${{ runner.os }}
+
+      - name: Bootstrap Pinta
+        run: ./scripts/bootstrap-pinta.sh
+
+      - name: Build the add-in
+        run: dotnet build src/TheMorbidArk.PintaExtension.BezierCurve/TheMorbidArk.PintaExtension.BezierCurve.csproj -c Release --nologo
+
+      - name: Build the test add-in
+        run: dotnet build src/TheMorbidArk.PintaExtension.BezierCurve.SmokeTest/TheMorbidArk.PintaExtension.BezierCurve.SmokeTest.csproj -c Release --nologo
+
+      - name: Unit tests
+        run: dotnet test src/TheMorbidArk.PintaExtension.BezierCurve.Tests/TheMorbidArk.PintaExtension.BezierCurve.Tests.csproj --nologo --logger "console;verbosity=normal"
+
+      - name: Build the .mpack
+        run: ./scripts/make-mpack.sh
+
+      - name: Smoke test
+        run: ./scripts/smoke-test.sh
+
+      - name: Package test
+        run: ./scripts/package-test.sh
+
+      - name: Upload the .mpack
+        uses: actions/upload-artifact@v4
+        with:
+          name: PintaExtension-BezierCurve-mpack
+          path: dist/*.mpack
+          if-no-files-found: error
+
+      - name: Upload the test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: |
+            dist/smoketest/
+            dist/.pkgtest/
+          if-no-files-found: ignore

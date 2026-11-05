@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>TheMorbidArk.PintaExtension.BezierCurve.Tests</RootNamespace>
+    <AssemblyName>TheMorbidArk.PintaExtension.BezierCurve.Tests</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="4.3.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.0.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheMorbidArk.PintaExtension.BezierCurve\TheMorbidArk.PintaExtension.BezierCurve.csproj" />
+  </ItemGroup>
+
+</Project>

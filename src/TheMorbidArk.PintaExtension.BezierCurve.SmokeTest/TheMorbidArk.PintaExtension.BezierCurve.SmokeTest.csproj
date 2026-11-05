@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TheMorbidArk.PintaExtension.BezierCurve.SmokeTest</RootNamespace>
+    <AssemblyName>TheMorbidArk.PintaExtension.BezierCurve.SmokeTest</AssemblyName>
+
+    <!-- Test-only add-in; never packaged with the release .mpack. -->
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.Addins" Version="1.4.2-alpha.4" />
+    <!-- only used by the .mpack installation test -->
+    <PackageReference Include="Mono.Addins.Setup" Version="1.4.2-alpha.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(PintaSourceDir)\Pinta.Core\Pinta.Core.csproj" />
+    <ProjectReference Include="..\TheMorbidArk.PintaExtension.BezierCurve\TheMorbidArk.PintaExtension.BezierCurve.csproj" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include=".addin.xml" />
+  </ItemGroup>
+
+
+</Project>

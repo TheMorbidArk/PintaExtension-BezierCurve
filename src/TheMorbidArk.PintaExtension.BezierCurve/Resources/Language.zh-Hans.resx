@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ToolName" xml:space="preserve">
+    <value>贝塞尔</value>
+  </data>
+  <data name="ToolDescription" xml:space="preserve">
+    <value>绘制贝塞尔曲线</value>
+  </data>
+  <data name="DragStartEnd" xml:space="preserve">
+    <value>拖出起点和终点。</value>
+  </data>
+  <data name="ReleaseToPlace" xml:space="preserve">
+    <value>松开鼠标放置该点。</value>
+  </data>
+  <data name="HintFirstControl" xml:space="preserve">
+    <value>{0}拖拽设置第一个控制点，或{1}单击结束。</value>
+  </data>
+  <data name="HintLastControl" xml:space="preserve">
+    <value>{0}拖拽设置最后一个控制点，或{1}单击结束。</value>
+  </data>
+  <data name="HintAdjust" xml:space="preserve">
+    <value>拖动任意控制点可继续调整，按 Enter 完成，或在空白处拖动开始新曲线。</value>
+  </data>
+  <data name="ButtonLeft" xml:space="preserve">
+    <value>左键</value>
+  </data>
+  <data name="ButtonRight" xml:space="preserve">
+    <value>右键</value>
+  </data>
+  <data name="BrushWidth" xml:space="preserve">
+    <value>笔宽</value>
+  </data>
+  <data name="Dash" xml:space="preserve">
+    <value>虚线</value>
+  </data>
+  <data name="DashTooltip" xml:space="preserve">
+    <value>虚线样式，例如  -  为实线，  --  为虚线</value>
+  </data>
+  <data name="PointInfo" xml:space="preserve">
+    <value>P{0}: {1}, {2}</value>
+  </data>
+  <data name="PointCount" xml:space="preserve">
+    <value>{0}/4</value>
+  </data>
+  <data name="SizeInfo" xml:space="preserve">
+    <value>尺寸 {0}×{1}</value>
+  </data>
+  <data name="SnapAngle" xml:space="preserve">
+    <value>{0}°</value>
+  </data>
+  <data name="ToolMode" xml:space="preserve">
+    <value>行为</value>
+  </data>
+  <data name="ToolModeTooltip" xml:space="preserve">
+    <value>曲线画完之后的行为：KolourPaint 直接把它变成像素；MS Paint 让它保持为带选择框的对象，可移动、缩放、翻转。</value>
+  </data>
+  <data name="ModeKolourPaint" xml:space="preserve">
+    <value>KolourPaint</value>
+  </data>
+  <data name="ModePaint" xml:space="preserve">
+    <value>MS Paint</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="CommitKeep" xml:space="preserve">
+    <value>保持可编辑</value>
+  </data>
+  <data name="CommitNow" xml:space="preserve">
+    <value>放点即提交</value>
+  </data>
+  <data name="CommitTooltip" xml:space="preserve">
+    <value>放完第二个控制点就提交曲线（MS Paint 的做法），或保持可编辑直到手动结束。</value>
+  </data>
+  <data name="EditLastCurveTooltip" xml:space="preserve">
+    <value>把最近提交的曲线重新拾起来调整（Ctrl+E）。</value>
+  </data>
+  <data name="EditLastCurve" xml:space="preserve">
+    <value>正在编辑最近提交的曲线。</value>
+  </data>
+  <data name="StyleTooltip" xml:space="preserve">
+    <value>描边、形状与对称选项</value>
+  </data>
+  <data name="StyleStroke" xml:space="preserve">
+    <value>描边</value>
+  </data>
+  <data name="StyleShape" xml:space="preserve">
+    <value>形状</value>
+  </data>
+  <data name="StyleSymmetry" xml:space="preserve">
+    <value>对称</value>
+  </data>
+  <data name="StartEnd" xml:space="preserve">
+    <value>起点</value>
+  </data>
+  <data name="FinishEnd" xml:space="preserve">
+    <value>终点</value>
+  </data>
+  <data name="CapRound" xml:space="preserve">
+    <value>圆头</value>
+  </data>
+  <data name="CapPointed" xml:space="preserve">
+    <value>尖头</value>
+  </data>
+  <data name="CapSquare" xml:space="preserve">
+    <value>方头</value>
+  </data>
+  <data name="Join" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="JoinRound" xml:space="preserve">
+    <value>圆角</value>
+  </data>
+  <data name="JoinBevel" xml:space="preserve">
+    <value>斜切</value>
+  </data>
+  <data name="JoinMiter" xml:space="preserve">
+    <value>尖角</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>渐变</value>
+  </data>
+  <data name="GradientOff" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="GradientOn" xml:space="preserve">
+    <value>主色到副色</value>
+  </data>
+  <data name="TaperStart" xml:space="preserve">
+    <value>起始宽度</value>
+  </data>
+  <data name="TaperEnd" xml:space="preserve">
+    <value>结束宽度</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>闭合曲线</value>
+  </data>
+  <data name="SmoothClose" xml:space="preserve">
+    <value>平滑接缝</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>填充</value>
+  </data>
+  <data name="Symmetry" xml:space="preserve">
+    <value>对称</value>
+  </data>
+  <data name="SymmetryOff" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="SymmetryMirror" xml:space="preserve">
+    <value>镜像</value>
+  </data>
+  <data name="SymmetryCenter" xml:space="preserve">
+    <value>中心对称</value>
+  </data>
+  <data name="PixelAlignment" xml:space="preserve">
+    <value>对齐到整像素</value>
+  </data>
+  <data name="ClosedInfo" xml:space="preserve">
+    <value>闭合</value>
+  </data>
+  <data name="FillInfo" xml:space="preserve">
+    <value>填充</value>
+  </data>
+  <data name="SymmetryInfo" xml:space="preserve">
+    <value>对称：{0}</value>
+  </data>
+  <data name="FlipHorizontalTooltip" xml:space="preserve">
+    <value>水平翻转曲线</value>
+  </data>
+  <data name="FlipVerticalTooltip" xml:space="preserve">
+    <value>垂直翻转曲线</value>
+  </data>
+  <data name="ObjectInfo" xml:space="preserve">
+    <value>对象</value>
+  </data>
+  <data name="ObjectHint" xml:space="preserve">
+    <value>移动对象，点击框外即可放下</value>
+  </data>
+  <data name="ShapeInfo" xml:space="preserve">
+    <value>形状</value>
+  </data>
+</root>

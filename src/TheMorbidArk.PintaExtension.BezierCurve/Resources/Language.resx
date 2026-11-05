@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ToolName" xml:space="preserve">
+    <value>Bezier</value>
+  </data>
+  <data name="ToolDescription" xml:space="preserve">
+    <value>Draws Bezier curves</value>
+  </data>
+  <data name="DragStartEnd" xml:space="preserve">
+    <value>Drag out the start and end points.</value>
+  </data>
+  <data name="ReleaseToPlace" xml:space="preserve">
+    <value>Release the mouse button to place the point.</value>
+  </data>
+  <data name="HintFirstControl" xml:space="preserve">
+    <value>{0} drag to set the first control point, or {1} click to finish.</value>
+  </data>
+  <data name="HintLastControl" xml:space="preserve">
+    <value>{0} drag to set the last control point, or {1} click to finish.</value>
+  </data>
+  <data name="HintAdjust" xml:space="preserve">
+    <value>Drag a point to adjust the curve, press Enter to finish, or drag elsewhere to start a new one.</value>
+  </data>
+  <data name="ButtonLeft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="ButtonRight" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="BrushWidth" xml:space="preserve">
+    <value>Brush width</value>
+  </data>
+  <data name="Dash" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="DashTooltip" xml:space="preserve">
+    <value>Dash pattern, for example  -  for a solid line,  --  for dashes</value>
+  </data>
+  <data name="PointInfo" xml:space="preserve">
+    <value>P{0}: {1}, {2}</value>
+  </data>
+  <data name="PointCount" xml:space="preserve">
+    <value>{0}/4</value>
+  </data>
+  <data name="SizeInfo" xml:space="preserve">
+    <value>size {0}×{1}</value>
+  </data>
+  <data name="SnapAngle" xml:space="preserve">
+    <value>{0}°</value>
+  </data>
+  <data name="ToolMode" xml:space="preserve">
+    <value>Behaviour</value>
+  </data>
+  <data name="ToolModeTooltip" xml:space="preserve">
+    <value>What happens to a curve once it is finished: KolourPaint drops it onto the layer as paint, MS Paint keeps it an object with a selection frame that can be moved, scaled and flipped.</value>
+  </data>
+  <data name="ModeKolourPaint" xml:space="preserve">
+    <value>KolourPaint</value>
+  </data>
+  <data name="ModePaint" xml:space="preserve">
+    <value>MS Paint</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Commit</value>
+  </data>
+  <data name="CommitKeep" xml:space="preserve">
+    <value>Keep editable</value>
+  </data>
+  <data name="CommitNow" xml:space="preserve">
+    <value>Commit now</value>
+  </data>
+  <data name="CommitTooltip" xml:space="preserve">
+    <value>Commit the curve as soon as the last control point is placed, the way MS Paint does it, or keep it adjustable until it is finished.</value>
+  </data>
+  <data name="EditLastCurveTooltip" xml:space="preserve">
+    <value>Pick the curve that was committed last up again and adjust it (Ctrl+E).</value>
+  </data>
+  <data name="EditLastCurve" xml:space="preserve">
+    <value>Editing the curve that was committed last.</value>
+  </data>
+  <data name="StyleTooltip" xml:space="preserve">
+    <value>Stroke, shape and symmetry options</value>
+  </data>
+  <data name="StyleStroke" xml:space="preserve">
+    <value>Stroke</value>
+  </data>
+  <data name="StyleShape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="StyleSymmetry" xml:space="preserve">
+    <value>Symmetry</value>
+  </data>
+  <data name="StartEnd" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="FinishEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="CapRound" xml:space="preserve">
+    <value>Round</value>
+  </data>
+  <data name="CapPointed" xml:space="preserve">
+    <value>Pointed</value>
+  </data>
+  <data name="CapSquare" xml:space="preserve">
+    <value>Square</value>
+  </data>
+  <data name="Join" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="JoinRound" xml:space="preserve">
+    <value>Round</value>
+  </data>
+  <data name="JoinBevel" xml:space="preserve">
+    <value>Bevel</value>
+  </data>
+  <data name="JoinMiter" xml:space="preserve">
+    <value>Miter</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="GradientOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="GradientOn" xml:space="preserve">
+    <value>Primary to secondary</value>
+  </data>
+  <data name="TaperStart" xml:space="preserve">
+    <value>Start width</value>
+  </data>
+  <data name="TaperEnd" xml:space="preserve">
+    <value>End width</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Closed curve</value>
+  </data>
+  <data name="SmoothClose" xml:space="preserve">
+    <value>Smooth seam</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="Symmetry" xml:space="preserve">
+    <value>Symmetry</value>
+  </data>
+  <data name="SymmetryOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="SymmetryMirror" xml:space="preserve">
+    <value>Mirror</value>
+  </data>
+  <data name="SymmetryCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="PixelAlignment" xml:space="preserve">
+    <value>Whole pixels</value>
+  </data>
+  <data name="ClosedInfo" xml:space="preserve">
+    <value>closed</value>
+  </data>
+  <data name="FillInfo" xml:space="preserve">
+    <value>filled</value>
+  </data>
+  <data name="SymmetryInfo" xml:space="preserve">
+    <value>symmetry: {0}</value>
+  </data>
+  <data name="FlipHorizontalTooltip" xml:space="preserve">
+    <value>Flip the curve horizontally</value>
+  </data>
+  <data name="FlipVerticalTooltip" xml:space="preserve">
+    <value>Flip the curve vertically</value>
+  </data>
+  <data name="ObjectInfo" xml:space="preserve">
+    <value>object</value>
+  </data>
+  <data name="ObjectHint" xml:space="preserve">
+    <value>Move the object and drop it by clicking outside its frame</value>
+  </data>
+  <data name="ShapeInfo" xml:space="preserve">
+    <value>shape</value>
+  </data>
+</root>

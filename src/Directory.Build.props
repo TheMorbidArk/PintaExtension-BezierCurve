@@ -1,0 +1,24 @@
+<Project>
+
+  <PropertyGroup>
+    <!--
+      Where the Pinta sources live. Only Pinta.Core is needed to build the add-in.
+      scripts/bootstrap-pinta.sh clones Pinta into .pinta/Pinta (git-ignored).
+
+      Override it when Pinta lives somewhere else:
+        dotnet build -p:PintaSourceDir=/path/to/Pinta
+    -->
+    <PintaSourceDir Condition="'$(PintaSourceDir)' == ''">$(MSBuildThisFileDirectory)..\.pinta\Pinta</PintaSourceDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--
+      The add-in manifest is the single source of the version: it is what Mono.Addins
+      reads, and the assembly version is derived from it here so that the two can never
+      disagree. Bump the version in src/TheMorbidArk.PintaExtension.BezierCurve/.addin.xml only.
+    -->
+    <AddinManifest>$(MSBuildThisFileDirectory)TheMorbidArk.PintaExtension.BezierCurve\.addin.xml</AddinManifest>
+    <AddinVersion Condition="'$(AddinVersion)' == ''">$([System.Text.RegularExpressions.Regex]::Match($([System.IO.File]::ReadAllText('$(AddinManifest)')), '&lt;Addin [^&gt;]*version="([^"]+)"').Groups[1].Value)</AddinVersion>
+  </PropertyGroup>
+
+</Project>

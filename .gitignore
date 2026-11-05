@@ -1,0 +1,10 @@
+# Build output
+bin/
+obj/
+dist/
+
+# Pinta sources cloned by scripts/bootstrap-pinta.sh
+.pinta/
+
+# Test / packaging scratch directories
+.xvfb-run/

@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TheMorbidArk.PintaExtension.BezierCurve</RootNamespace>
+    <AssemblyName>TheMorbidArk.PintaExtension.BezierCurve</AssemblyName>
+    <Authors>TheMorbidArk</Authors>
+    <RepositoryUrl>https://github.com/TheMorbidArk/PintaExtension-BezierCurve</RepositoryUrl>
+
+    <!--
+      The assembly *identity* must never change between releases. Pinta loads the add-in
+      through Mono.Addins, which resolves the type of an extension node by assembly
+      identity: when a new version is installed over an old one while Pinta is running,
+      the stale node still asks for the old identity. If that identity changes with every
+      release, the resolver finds the new file and fails with
+      "The located assembly's manifest definition does not match the assembly reference"
+      (FileLoadException), and Pinta only recovers after a restart.
+
+      Mono.Addins tracks updates by the add-in version in .addin.xml, not by the assembly
+      version, so freezing AssemblyVersion is safe. The release number is still visible in
+      the file version, the informational version and the manifest.
+    -->
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>$(AddinVersion).0</FileVersion>
+    <InformationalVersion>$(AddinVersion)</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+
+    <!-- We embed the .addin manifest and the .resx files explicitly below. -->
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.Addins" Version="1.4.2-alpha.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(PintaSourceDir)\Pinta.Core\Pinta.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Add-in manifest -->
+  <ItemGroup>
+    <EmbeddedResource Include=".addin.xml" />
+  </ItemGroup>
+
+  <!-- Translations: neutral (English) + Simplified Chinese.
+       All of them are embedded into the add-in assembly (WithCulture=false) so that the
+       add-in folder stays a flat copy of a single DLL plus its icons. -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Language.resx">
+      <LogicalName>TheMorbidArk.PintaExtension.BezierCurve.Language.resources</LogicalName>
+      <WithCulture>false</WithCulture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.zh-Hans.resx">
+      <LogicalName>TheMorbidArk.PintaExtension.BezierCurve.Language.zh-Hans.resources</LogicalName>
+      <WithCulture>false</WithCulture>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!--
+    Icons are embedded in the assembly and materialized into a cache directory at
+    startup (see CurveAddin). Keeping the add-in a single file is what makes
+    installing and uninstalling it with Mono.Addins clean: an .mpack that ships extra
+    files next to the assembly leaves those files (and a stale registry entry) behind
+    on uninstall, which then makes Pinta fail to load the add-in on the next start.
+  -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\icons\**\*">
+      <LogicalName>res/%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
+</Project>

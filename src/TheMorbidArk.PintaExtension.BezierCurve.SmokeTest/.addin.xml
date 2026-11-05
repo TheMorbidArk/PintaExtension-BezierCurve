@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Addin id="TheMorbidArk.PintaExtension.BezierCurve.SmokeTest" version="0.1.0" category="Utilities">
+	<Header>
+		<Name>Bezier Curve smoke test</Name>
+		<Description>Drives the curve tool headlessly and writes the results to the temp directory.</Description>
+		<Author>TheMorbidArk</Author>
+	</Header>
+	<Dependencies>
+		<Addin id="Pinta" version="3.1" />
+	</Dependencies>
+</Addin>

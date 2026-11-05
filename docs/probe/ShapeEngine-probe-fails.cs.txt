@@ -1,0 +1,56 @@
+// Probe B: can a plugin implement a custom Pinta shape engine (BaseEditEngine / ShapeEngine)?
+using System;
+using System.Collections.Generic;
+using Cairo;
+using Pinta.Core;
+using Pinta.Tools;
+
+namespace ProbeB;
+
+public sealed class CurveShapeEngine : ShapeEngine
+{
+	public CurveShapeEngine (
+		UserLayer parentLayer,
+		ReEditableLayer? drawingLayer,
+		BaseEditEngine.ShapeTypes shapeType,
+		bool antialiasing,
+		Color outline,
+		Color fill,
+		int brushWidth,
+		LineCap lineCap)
+		: base (parentLayer, drawingLayer, shapeType, antialiasing, false, outline, fill, brushWidth, lineCap)
+	{
+	}
+
+	public override ShapeEngine Clone ()
+	{
+		CurveShapeEngine clone = new (null!, DrawingLayer, ShapeType, AntiAliasing, OutlineColor, FillColor, BrushWidth, LineCap);
+		return clone;
+	}
+
+	public override void GeneratePoints (int brush_width)
+	{
+		List<GeneratedPoint> pts = [new GeneratedPoint (new PointD (0, 0), 0)];
+
+		// Q1: can a derived plugin class assign GeneratedPoints?
+		GeneratedPoints = [.. pts];
+
+		// Q2: can a plugin update the engine's brush width / antialiasing / dash pattern?
+		BrushWidth = brush_width;
+		AntiAliasing = true;
+		DashPattern = "-";
+	}
+}
+
+public sealed class ProbeEditEngine : BaseEditEngine
+{
+	protected override string ShapeName => "Probe";
+	public ProbeEditEngine (IServiceProvider services, ShapeTool owner) : base (services, owner) { }
+
+	protected override ShapeEngine CreateShape (bool ctrlKey, bool clickedOnControlPoint, PointD prevSelPoint)
+	{
+		// Q3: can a plugin use an enum value that Pinta does not define?
+		BaseEditEngine.ShapeTypes custom = (BaseEditEngine.ShapeTypes) 4;
+		return new CurveShapeEngine (null!, null, custom, false, OutlineColor, FillColor, BrushWidth, LineCap.Round);
+	}
+}

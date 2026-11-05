@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TheMorbidArk.PintaExtension.BezierCurve.Packaging</RootNamespace>
+    <AssemblyName>mpack</AssemblyName>
+
+    <!-- Packaging helper; never shipped. -->
+    <RollForward>Major</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.Addins" Version="1.4.2-alpha.4" />
+    <PackageReference Include="Mono.Addins.Setup" Version="1.4.2-alpha.4" />
+    <!-- Required to scan add-in assemblies on .NET Core -->
+    <PackageReference Include="Mono.Addins.CecilReflector" Version="1.4.2-alpha.4" />
+  </ItemGroup>
+
+</Project>
