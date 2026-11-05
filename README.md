@@ -317,9 +317,10 @@ This project would not exist without the following tools, models and communities
 
 - **Development assistance**: Thanks to **DeepSeek V4.1 Flash 1017** for its help with the code, the documentation and the debugging.
 - **Core dependencies**: The add-in is built on **Pinta 3.1**'s add-in API, with **Mono.Addins** and **GTK#/Cairo**.
-- **Upstream project**: The interaction model and the angle snapping algorithm are inspired by **KolourPaint** (`tools/polygonal/kpToolCurve.cpp`, `kpToolPolygonalBase.cpp`, © Clarence Dang, BSD-2-Clause). The implementation here is independent C#; the icon is drawn from scratch in Pinta's style.
+- **Upstream project**: The curve tool is a port of **KolourPaint**'s curve tool (`tools/polygonal/kpToolCurve.cpp`, `kpToolPolygonalBase.cpp`, © Clarence Dang, BSD-2-Clause). The ported parts are BSD-2-Clause; see [NOTICE](NOTICE). The icon is drawn from scratch in Pinta's style.
 - **Community**: Thanks to everyone who contributes through issues, pull requests and discussions.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT for the original code. The parts ported from KolourPaint are BSD-2-Clause;
+see [NOTICE](NOTICE) for the copyright notice, conditions and disclaimer.

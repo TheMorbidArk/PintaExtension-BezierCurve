@@ -4,6 +4,16 @@ All notable changes to this project are documented in this file.
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/), and the
 project uses [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] - 2026-11-05
+
+### Fixed
+
+- **Licensing compliance.** The curve tool is a port of KolourPaint's curve tool,
+  which is BSD-2-Clause. The repository now ships the full copyright notice,
+  conditions and disclaimer in `NOTICE`, the `LICENSE` file points to it, and the
+  add-in manifest says that portions are derived from KolourPaint. No functional
+  changes.
+
 ## [0.1.0] - 2026-11-05
 
 First public release.

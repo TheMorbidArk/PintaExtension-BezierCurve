@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Addin id="TheMorbidArk.PintaExtension.BezierCurve" version="0.1.0" category="Tools">
+<Addin id="TheMorbidArk.PintaExtension.BezierCurve" version="0.1.1" category="Tools">
 	<!-- Information shown in the add-in manager. -->
 	<Header>
 		<Name>Bezier Curve</Name>
-		<Description>Adds a Bezier curve tool: drag out a line, then bend it with one or two control points. Includes an MS Paint-style object mode.</Description>
+		<Description>Adds a Bezier curve tool: drag out a line, then bend it with one or two control points. Includes an MS Paint-style object mode. Portions derived from KolourPaint (BSD-2-Clause).</Description>
 		<Author>TheMorbidArk</Author>
 		<Url>https://github.com/TheMorbidArk/PintaExtension-BezierCurve</Url>
 	</Header>

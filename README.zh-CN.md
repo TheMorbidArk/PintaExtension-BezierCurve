@@ -116,9 +116,10 @@ dotnet test src/TheMorbidArk.PintaExtension.BezierCurve.Tests
 
 - **开发辅助**：感谢 **DeepSeek V4.1 Flash 1017** 在代码实现、文档撰写与调试过程中提供的辅助。
 - **核心依赖**：本项目基于 **Pinta 3.1** 的插件 API 构建，使用 **Mono.Addins** 与 **GTK#/Cairo**。
-- **上游项目**：交互模型与角度吸附算法参考自 **KolourPaint**（`tools/polygonal/kpToolCurve.cpp`、`kpToolPolygonalBase.cpp`，© Clarence Dang，BSD-2-Clause）。这里的实现是独立编写的 C#；图标按 Pinta 风格从零绘制。
+- **上游项目**：曲线工具移植自 **KolourPaint** 的曲线工具（`tools/polygonal/kpToolCurve.cpp`、`kpToolPolygonalBase.cpp`，© Clarence Dang，BSD-2-Clause）。移植部分采用 BSD-2-Clause，见 [NOTICE](NOTICE)。图标按 Pinta 风格从零绘制。
 - **社区贡献者**：感谢所有通过 Issue、PR 和讨论为本项目做出贡献的开发者。
 
 ## 许可证
 
-MIT，见 [LICENSE](LICENSE)。
+原创代码采用 MIT。从 KolourPaint 移植的部分采用 BSD-2-Clause；版权声明、条件和
+免责声明见 [NOTICE](NOTICE)。
