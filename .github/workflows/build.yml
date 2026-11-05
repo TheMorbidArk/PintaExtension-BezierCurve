@@ -24,9 +24,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # The smoke test and the package test start Pinta, which needs a display.
-      - name: Install Xvfb
-        run: sudo apt-get update && sudo apt-get install -y xvfb
+      # The smoke test and the package test start Pinta, which needs a display and the
+      # GTK4 / Adwaita runtime libraries.
+      - name: Install Xvfb and GTK4
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgtk-4-1 libadwaita-1-0 librsvg2-2
 
       # Only Pinta.Core is needed to compile the add-in, but the test scripts start the
       # application, so the whole of Pinta is cloned and built here.
